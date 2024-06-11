@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" ?>
 <root>
   <plan>
@@ -21,5 +22,28 @@
     <checklist2/>
     <cost/>
     <memo/>
+=======
+<root>
+  <plan>
+    <planname>&#50976;&#47101;</planname>
+    <startdate>2024/06/03</startdate>
+    <enddate>2024/06/06</enddate>
+    <plancountry>&#50689;&#44397;, &#46021;&#51068;</plancountry>
+    <schedule>
+      <day1>
+        <place name="&#49436;&#50872;&#45824;&#51077;&#44396;" lat="37.48122299999999" lng="126.95271509999998" />
+        <place name="&#44053;&#45224;" lat="37.49721224476469" lng="127.02759817130277" />
+      <place name="&#54732;&#52649;&#50896;" lat="37.49771145795591" lng="126.97353680419923" /></day1>
+      <day2 />
+      <day3>
+        <place name="11" lat="37.5665" lng="126.97800000000001" />
+      </day3>
+    </schedule>
+    <checklist1>111,222</checklist1>
+    <checklist2>444,333</checklist2>
+    <cost>&#44368;&#53685;&#48708;:1500,&#12615;&#12615;&#12615;:11111</cost>
+    <memo>&#12596;&#12609;&#12615;&#12609;&#12596;&#12615;&#12609;&#12596;&#12615;
+</memo>
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
   </plan>
 </root>

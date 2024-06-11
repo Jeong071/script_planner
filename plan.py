@@ -17,7 +17,15 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+<<<<<<< HEAD
 # Google Maps API 키 설정
+=======
+<<<<<<< HEAD
+# Google Maps API 키 설정
+=======
+# Google Maps API 키
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
 API_KEY = 'AIzaSyD_klTk0Y3yyjkBzijIiO1-VPER1_Ao3tM'
 gmaps = googlemaps.Client(key=API_KEY)
 
@@ -28,7 +36,15 @@ class PlanGUI:
         self.window.title(f"{plan_name} / {plan_date} / {plan_country}")
         self.window.geometry("1120x680")
 
+<<<<<<< HEAD
         self.plan_name = plan_name  # 계획 이름을 XML에서 참조하기 위해 저장
+=======
+<<<<<<< HEAD
+        self.plan_name = plan_name  # 계획 이름을 XML에서 참조하기 위해 저장
+=======
+        self.plan_name = plan_name
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
 
         self.schedule_frame = Frame(self.window, width=350, height=600, bg='grey')
         self.schedule_frame.place(x=20, y=60)
@@ -81,7 +97,15 @@ class PlanGUI:
 
         self.current_marker = None
 
+<<<<<<< HEAD
         # Load the schedule from the XML file
+=======
+<<<<<<< HEAD
+        # Load the schedule from the XML file
+=======
+
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         self.load_schedule()
 
     def add_day_schedule(self):
@@ -410,10 +434,23 @@ class PlanGUI:
 
     def open_pi_chart(self):
         self.clear_main_frame()
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         fig, ax = plt.subplots(figsize=(7, 7))  # figsize를 사용하여 크기 조정
 
         # 한글 폰트 설정
         font_path = "C:/Windows/Fonts/malgun.ttf"  # Windows에서의 폰트 경로 (예시)
+<<<<<<< HEAD
+=======
+=======
+        fig, ax = plt.subplots(figsize=(7, 7))
+
+
+        font_path = "C:/Windows/Fonts/malgun.ttf"
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         font_name = fm.FontProperties(fname=font_path).get_name()
         plt.rc('font', family=font_name)
 
@@ -427,7 +464,15 @@ class PlanGUI:
 
         canvas = FigureCanvasTkAgg(fig, master=self.main)
         canvas.draw()
+<<<<<<< HEAD
         canvas.get_tk_widget().place(x=0, y=0, width=600, height=640)  # place를 사용하여 크기 고정
+=======
+<<<<<<< HEAD
+        canvas.get_tk_widget().place(x=0, y=0, width=600, height=640)  # place를 사용하여 크기 고정
+=======
+        canvas.get_tk_widget().place(x=0, y=0, width=600, height=640)
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
 
     def get_cost_data(self):
         costs = {}
@@ -545,13 +590,26 @@ class PlanGUI:
         self.map_widget = TkinterMapView(self.main, width=600, height=640, corner_radius=0)
         self.map_widget.place(x=0, y=50)
 
+<<<<<<< HEAD
         # OpenStreetMap 타일 서버 설정
+=======
+<<<<<<< HEAD
+        # OpenStreetMap 타일 서버 설정
+=======
+
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         self.map_widget.set_tile_server("https://tile.openstreetmap.org/{z}/{x}/{y}.png", tile_size=256)
 
         search_entry = Entry(search_frame)
         search_entry.pack(side='left', expand=True, fill='x', padx=5, pady=5)
 
+<<<<<<< HEAD
         search_button = Button(search_frame, text="검색,마킹", command=lambda: self.search_location(search_entry.get()))
+=======
+<<<<<<< HEAD
+        search_button = Button(search_frame, text="검색", command=lambda: self.search_location(search_entry.get()))
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         search_button.pack(side='right', padx=5, pady=5)
 
         # 기본 위치 설정 (예: 서울)
@@ -559,6 +617,7 @@ class PlanGUI:
         self.map_widget.set_zoom(12)  # 줌 레벨 설정
 
         # 지도 클릭 이벤트 바인딩
+<<<<<<< HEAD
         self.map_widget.bind("<Button-1>", self.on_map_click)
 
     def search_location(self, location):
@@ -568,6 +627,27 @@ class PlanGUI:
             lng = geocode_result[0]['geometry']['location']['lng']
             self.map_widget.set_position(lat, lng)
             self.add_marker((lat, lng))
+=======
+=======
+        search_button = Button(search_frame, text="검색,마킹", command=lambda: self.search_location(search_entry.get()))
+        search_button.pack(side='right', padx=5, pady=5)
+
+        self.map_widget.set_position(37.5665, 126.9780)
+        self.map_widget.set_zoom(12)
+
+
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+        self.map_widget.bind("<Button-1>", self.on_map_click)
+
+    def search_location(self, location):
+        self.map_widget.set_address(location)
+<<<<<<< HEAD
+        position = self.map_widget.get_position()  # 검색된 위치의 좌표 가져오기
+=======
+        position = self.map_widget.get_position()
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+        self.add_marker(position)
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
 
     def on_map_click(self, event):
         position = self.map_widget.convert_canvas_coordinates_to_lat_lng(event.x, event.y)
@@ -584,38 +664,93 @@ class PlanGUI:
         plan_info = ""
         for plan in root.findall('plan'):
             if plan.find('planname').text == plan_name:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                plan_info += f"Plan Name: {plan.find('planname').text}\n"
+                plan_info += f"Start Date: {plan.find('startdate').text}\n"
+                plan_info += f"End Date: {plan.find('enddate').text}\n"
+                plan_info += f"Countries: {plan.find('plancountry').text}\n"
+                plan_info += "Schedule:\n"
+=======
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
                 plan_info += f"여행 이름: {plan.find('planname').text}\n"
                 plan_info += f"출발 날짜: {plan.find('startdate').text}\n"
                 plan_info += f"도착 날짜: {plan.find('enddate').text}\n"
                 plan_info += f"방문 지역: {plan.find('plancountry').text}\n"
                 plan_info += "일정:\n"
+<<<<<<< HEAD
+=======
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
                 for day in plan.find('schedule'):
                     plan_info += f"{day.tag}:\n"
                     for place in day.findall('place'):
                         plan_info += f" - {place.get('name')}\n"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                plan_info += f"Checklist (To Do): {plan.find('checklist1').text}\n"
+                plan_info += f"Checklist (Done): {plan.find('checklist2').text}\n"
+                plan_info += f"Cost: {plan.find('cost').text}\n"
+                plan_info += f"Memo: {plan.find('memo').text}\n"
+=======
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
                 plan_info += f"준비 해야할 것: {plan.find('checklist1').text}\n"
                 plan_info += f"준비 완료된 것: {plan.find('checklist2').text}\n"
                 plan_info += f"비용: {plan.find('cost').text}\n"
                 plan_info += f"메모: {plan.find('memo').text}\n"
+<<<<<<< HEAD
+=======
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
                 break
         return plan_info
 
     def send_gmail(self):
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         recipientAddr = self.mail_entry.get()  # 사용자가 입력한 메일 주소를 가져옵니다.
         plan_name = self.plan_name  # 계획 이름을 가져옵니다.
         plan_info = self.read_plan_from_xml(plan_name)
 
+<<<<<<< HEAD
+=======
+        password = 'your_password_here'  # 비밀번호는 하드코딩 대신 안전한 방법으로 처리해야 합니다.
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         host = "smtp.gmail.com"  # Gmail STMP 서버 주소.
         port = 587
 
         senderAddr = "starship8902@gmail.com"  # 보내는 사람 email 주소.
 
         # 이메일 메시지 생성
+<<<<<<< HEAD
+=======
+=======
+        recipientAddr = self.mail_entry.get()
+        plan_name = self.plan_name
+        plan_info = self.read_plan_from_xml(plan_name)
+
+
+        host = "smtp.gmail.com"
+        port = 587
+
+        senderAddr = "starship8902@gmail.com"
+
+
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         msg = MIMEMultipart("alternative")
         msg['Subject'] = "여행 일정 및 방문국가 정보"
         msg['From'] = senderAddr
         msg['To'] = recipientAddr
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         # MIMEText 객체 생성
         plan_part = MIMEText(plan_info, 'plain')
 
@@ -627,6 +762,22 @@ class PlanGUI:
             server = smtplib.SMTP(host, port)
             server.starttls()
             server.login(senderAddr, spam.get_password())  # Gmail 계정 로그인
+<<<<<<< HEAD
+=======
+=======
+
+        plan_part = MIMEText(plan_info, 'plain')
+
+
+        msg.attach(plan_part)
+
+
+        try:
+            server = smtplib.SMTP(host, port)
+            server.starttls()
+            server.login(senderAddr, spam.get_password())
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
             server.sendmail(senderAddr, recipientAddr, msg.as_string())
             server.quit()
             print("Email sent successfully!")
@@ -646,4 +797,7 @@ class PlanGUI:
     def back_to_main(self):
         self.window.destroy()
         self.main_window.deiconify()
+<<<<<<< HEAD
 
+=======
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde

@@ -11,30 +11,58 @@ from iso_codes import get_iso_code
 import os
 import subprocess
 from plan import PlanGUI
+<<<<<<< HEAD
 from PIL import Image, ImageTk
+=======
+<<<<<<< HEAD
+from PIL import Image,ImageTk
+=======
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
 
 class MainGUI:
     def __init__(self):
         self.window = Tk()
         self.window.title("여행 플래너")
         self.window.geometry("930x450")
+<<<<<<< HEAD
         self.window.configure(bg='white')
 
+=======
+<<<<<<< HEAD
+        self.window.configure(bg='white')
+=======
+
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         self.plans_frame = Frame(self.window, bg="light sky blue")
         self.plans_frame.place(x=20, y=190, width=900, height=180)
         self.plans_frame.pack_propagate(False)
 
+<<<<<<< HEAD
         self.mainlabel = Label(self.window, text="여행 플래너", font=("Yu Gothic UI Semibold", 45), fg="light sky blue", bg='white')
         self.mainlabel.place(x=10, y=10)
 
         self.imgframe = Frame(self.window, width=150, height=150, bg='white', highlightbackground="white")
         self.imgframe.place(x=350, y=10)
 
+=======
+<<<<<<< HEAD
+        self.mainlabel = Label(self.window, text="여행 플래너", font=("Yu Gothic UI Semibold", 45), fg="light sky blue",bg='white')
+        self.mainlabel.place(x=10, y=10)
+
+        self.imgframe = Frame(self.window, width=150, height=150, bg='white', highlightbackground="white"
+                                )
+        self.imgframe.place(x=350, y=10)
+
+
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         self.image_path = 'trip.jpg'  # 이미지 경로
         self.image = Image.open(self.image_path)
         self.image = self.image.resize((150, 150), Image.LANCZOS)
         self.photo = ImageTk.PhotoImage(self.image)
 
+<<<<<<< HEAD
         self.img_label = Label(self.imgframe, image=self.photo, width=150, height=150)
         self.img_label.pack()
 
@@ -42,6 +70,22 @@ class MainGUI:
         self.img_f = Label(self.imgframe, image=self.photo, width=150, height=150)
         self.img_f.place(x=350, y=10)
 
+=======
+
+        self.img_label = Label(self.imgframe, image=self.photo, width=150, height=150)
+        self.img_label.pack()
+
+
+        self.image = self.image.resize((150, 150), Image.LANCZOS)
+        self.img_f = Label(self.imgframe, image=self.photo,width=150,height=150)
+        self.img_f.place(x=350, y=10)
+
+=======
+        self.mainlabel = Label(self.window, text="여행 플래너", font=("Yu Gothic UI Semibold", 45), fg="light sky blue")
+        self.mainlabel.place(x=10, y=10)
+
+>>>>>>> 6c9a44f8ebc7aac4976e76f48b5839a4caaa766e
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         self.searchbutton = Button(self.window, text="해외국가 정보 검색", font=("Yu Gothic UI Semibold", 25), bd=4,
                                    command=self.open_search_window)
         self.searchbutton.place(x=570, y=10)
@@ -51,7 +95,14 @@ class MainGUI:
         self.add_button.place(x=570, y=100)
 
         self.load_plans()
+<<<<<<< HEAD
         self.start_teller_bot()
+=======
+
+
+        self.start_teller_bot()
+
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         self.window.mainloop()
 
     def start_teller_bot(self):
@@ -121,8 +172,13 @@ class MainGUI:
                     warning_info = ""
                     if warning_item is not None:
                         control_note = self.clean_html(warning_item.find('controlNote').text if warning_item.find('controlNote') is not None else "N/A")
+<<<<<<< HEAD
                         limit_note = self.clean_html(warning_item.find('limitaNote').text if warning_item.find('limitaNote') is not None else "N/A")
                         warning_info = f"\n여행 자제: {control_note}\n\n출국 권고: {limit_note}"
+=======
+                        limita_note = self.clean_html(warning_item.find('limitaNote').text if warning_item.find('limitaNote') is not None else "N/A")
+                        warning_info = f"\n여행 자제: {control_note}\n\n출국 권고: {limita_note}"
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
 
                     ban_info = ""
                     if ban_item is not None and ban_item.find('countryName').text == country_name:
@@ -289,17 +345,33 @@ class MainGUI:
         plan_frame.grid(row=0, column=plan_index, padx=5, pady=5)
         plan_frame.grid_propagate(False)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         plan_button = Button(plan_frame, text=f"{name}\n{date}\n방문 지역: {country}", width=20, height=7,
                              command=lambda: self.show_plan_details(name, date, country))
         plan_button.pack(fill='both', expand=True)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         edit_button = Button(plan_frame, text="✎", command=lambda: self.edit_plan(name, date, country, plan_button))
         edit_button.pack(side="left")
 
         if country != '국내':
+<<<<<<< HEAD
             show_button = Button(plan_frame, text="🔎", command=lambda: self.show_country_info(country))
             show_button.pack(side="left")
 
+=======
+
+            show_button = Button(plan_frame, text="🔎", command=lambda: self.show_country_info(country))
+            show_button.pack(side="left")
+
+
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
         delete_button = Button(plan_frame, text="🗑", command=lambda: self.delete_plan(plan_frame, name))
         delete_button.pack(side="right")
 
@@ -578,7 +650,15 @@ class MainGUI:
                 memo = plan.find('memo').text if plan.find('memo') is not None else ""
                 break
 
+<<<<<<< HEAD
         self.window.withdraw()
         PlanGUI(self.window, name, date, country, checklist1, checklist2, schedule, cost, memo)
 
+=======
+
+        self.window.withdraw()
+        PlanGUI(self.window, name, date, country, checklist1, checklist2, schedule, cost, memo)
+
+
+>>>>>>> bbaf0f0e19f491d2b4ae56293e6d609df2a4ccde
 MainGUI()
