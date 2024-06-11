@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<root>
+  <plan>
+    <planname>속초여행</planname>
+    <startdate>2024/06/11</startdate>
+    <enddate>2024/06/14</enddate>
+    <plancountry>국내</plancountry>
+    <schedule/>
+    <checklist1/>
+    <checklist2/>
+    <cost/>
+    <memo/>
+  </plan>
+  <plan>
+    <planname>유럽일주</planname>
+    <startdate>2024/06/11</startdate>
+    <enddate>2024/06/28</enddate>
+    <plancountry>영국, 프랑스</plancountry>
+    <schedule/>
+    <checklist1/>
+    <checklist2/>
+    <cost/>
+    <memo/>
+  </plan>
+</root>
